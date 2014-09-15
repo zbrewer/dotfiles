@@ -62,5 +62,5 @@ cpu_avg_samples 2
 
 ## Stuff after 'TEXT' will be formatted on screen
 TEXT
-Core0: ${exec sensors | awk '/Core 0/ {print $3}'} C GPU: ${exec sensors radeon-pci-0200 | awk '/temp1/ {print $2}'} C | CPU: ${cpu cpu}% | RAM:$mem/${memmax} ($memperc%) ${if_up eth0}| IP: ${addr eth0} ${endif} | ${execi 300 /home/zach/.i3/Scripts/Weather.sh} | ${time %A %B %d, %Y} | ${time %I:%M %p}
+Core0: ${exec sensors | awk '/Core 0/ {print $3}'} GPU: ${exec sensors radeon-pci-0200 | awk '/temp1/ {print $2}'} | CPU: ${cpu cpu}% | RAM:$mem/${memmax} ($memperc%) ${if_up eth0}| IP: ${addr eth0} ${endif} | ${execi 300 /home/zach/.i3/Scripts/Weather.sh} | ${time %A %B %d, %Y} | ${time %I:%M %p}
 
