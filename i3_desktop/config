@@ -141,14 +141,14 @@ bar {
         status_command conky
         mode dock
         position bottom
-        output DVI-I-2
-        tray_output DVI-I-2
+        output DVI-0
+        tray_output DVI-0
         workspace_buttons yes
 }
 
 bar {
-        output DVI-I-3
-        tray_output DVI-I-2
+        output DVI-1
+        tray_output DVI-1
         workspace_buttons yes
 }
 
