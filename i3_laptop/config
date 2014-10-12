@@ -141,8 +141,8 @@ bar {
         status_command conky
         mode dock
         position bottom
-        output LVDS1
-        tray_output LVDS1
+        output eDP1
+        tray_output eDP1
         workspace_buttons yes
 }
 
