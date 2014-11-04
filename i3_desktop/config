@@ -174,7 +174,7 @@ bindsym $mod+minus scratchpad show
 focus_follows_mouse no
 
 # Launch Chromium with mod+c
-bindsym $mod+c exec chromium
+bindsym $mod+c exec google-chrome-stable
 
 # Launch Thunar with mod+t
 bindsym $mod+t exec thunar
