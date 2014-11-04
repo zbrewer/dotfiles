@@ -52,13 +52,13 @@ AUR_PACKAGES="dropbox speedcrunch archey3 thunar-dropbox google-chrome"
 
 # Functions to actually install things
 function installPackages() {
-   yes | pacman -Syyu
-   yes | pacman -S $DEPENDENCIES
-   yes | pacman -S $DE
-   yes | pacman -S $BROWSERS
-   yes | pacman -S $APPLICATIONS
-   yes | pacman -S $LIBREOFFICE
-   yes | pacman -S $EXTRAS
+   pacman -Syyu
+   pacman -S $DEPENDENCIES
+   pacman -S $DE
+   pacman -S $BROWSERS
+   pacman -S $APPLICATIONS
+   pacman -S $LIBREOFFICE
+   pacman -S $EXTRAS
 }
 
 function installAURPackages() {
