@@ -141,6 +141,12 @@ bar {
         status_command conky
         mode dock
         position bottom
+        output DisplayPort-1
+        tray_output DisplayPort-1
+        workspace_buttons yes
+}
+
+bar {
         output DVI-0
         tray_output DVI-0
         workspace_buttons yes
