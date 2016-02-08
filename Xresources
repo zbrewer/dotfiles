@@ -82,5 +82,5 @@ xterm*faceName: terminus:bold:pixelsize=12
 !! urxvt stuff
 
 URxvt.scrollBar: false
-URxvt.font: xft:Inconsolata:Medium:size=10
-URxvt.boldFont: xft:Inconsolata:Bold:size=10
+URxvt.font: xft:Inconsolata:Medium:size=12
+URxvt.boldFont: xft:Inconsolata:Bold:size=12

@@ -1,6 +1,5 @@
 #!/bin/bash
-# Requires feh
+# Requires nitrogen
 # This script restores the wallpaper
-# Use "feh --bg-scale FILE" To set a wallpaper
-# There are other options instead of scale and FILE can be anything
-sh ~/.fehbg &
+# Run nitrogen to select a wallpaper
+nitrogen --restore &
