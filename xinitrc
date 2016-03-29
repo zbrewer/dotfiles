@@ -11,7 +11,7 @@
 #   unset f
 # fi
 
-exec dbus-launch i3
+exec i3
 # exec gnome-session
 # exec startkde
 # exec startxfce4
