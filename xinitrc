@@ -11,6 +11,7 @@
 #   unset f
 # fi
 
+xbindkeys
 exec i3
 # exec gnome-session
 # exec startkde
