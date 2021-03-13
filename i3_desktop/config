@@ -26,7 +26,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 
 # change focus
 bindsym $mod+j focus left
@@ -141,12 +141,6 @@ bar {
         status_command $HOME/.i3/Scripts/i3StatusConky.sh
         mode dock
         position bottom
-        output DP-4
-        tray_output DP-4
-        workspace_buttons yes
-}
-
-bar {
         output DP-0
         tray_output DP-0
         workspace_buttons yes
@@ -154,18 +148,32 @@ bar {
 
 bar {
         output DP-2
-        tray_output DP-2
+        # tray_output DP-0
+        workspace_buttons yes
+}
+
+bar {
+        output DP-4
+        # tray_output DP-2
         workspace_buttons yes
 }
 
 # Loads the .Xresources file
 exec ~/.i3/Scripts/Xresources.sh
 
-# Reloads the desktop wallpaper using feh
-exec ~/.i3/Scripts/Wallpaper.sh
+# Configure the monitor layout
+exec ~/.i3/Scripts/MultipleMonitors.sh
+
+# rofi bindings (a program launcher)
+bindsym $mod+d exec "rofi -show run"
+bindsym $mod+g exec "rofi -show window"
+bindsym $mod+b exec "rofi -show workspace"
+
+# screen lock keybinding
+bindsym Control+Mod1+l exec "i3lock -c 333333 && xset dpms force off"
 
 # Starts Dropbox
-exec ~/.i3/Scripts/Dropbox.sh
+# exec ~/.i3/Scripts/Dropbox.sh
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -182,3 +190,11 @@ bindsym $mod+c exec google-chrome-stable
 # Launch Thunar with mod+t
 bindsym $mod+t exec thunar
 
+# Start the polkit
+exec "lxpolkit &"
+
+# Reload the wallpaper
+exec --no-startup-id nitrogen --restore
+
+# Start the system tray volume widget
+exec "pasystray &"

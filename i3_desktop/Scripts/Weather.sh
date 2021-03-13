@@ -6,7 +6,7 @@
 #(c) Michael Seiler 2007
 
 METRIC=0 #Should be 0 or 1; 0 for F, 1 for C
-LOCCOD="61801" # Example: OCN|AU|VIC|MELBOURNE
+LOCCOD="80020" # Example: OCN|AU|VIC|MELBOURNE
 
 if [ -z $1 ] && [ -x $LOCCOD ] ; then
         echo

@@ -1,72 +1,76 @@
-### Conky configuration file
-## Output is printed to the console -> i3bar
-# Modified: 27.11.2011 - mseed : http://www.fastlinux.eu
+conky.config = {
+--## Conky configuration file
+--# Output is printed to the console -> i3bar
+-- Modified: 27.11.2011 - mseed : http://www.fastlinux.eu
 
-## No output to X <yes/no>
-out_to_x no
+--# No output to X <yes/no>
+	out_to_x = false,
 
-## Create own window to draw <yes/no>
-own_window no
+--# Create own window to draw <yes/no>
+	own_window = false,
 
-## Print everything to console?
-out_to_console yes
+--# Print everything to console?
+	out_to_console = true,
 
-## Use double buffering (reduces flicker, not needed for console output)
-double_buffer no
+--# Use double buffering (reduces flicker, not needed for console output)
+	double_buffer = false,
 
-## Set to yes if you want Conky to be forked in the background
-background no
+--# Set to yes if you want Conky to be forked in the background
+	background = false,
 
-## Update interval in seconds
-update_interval 2.0
+--# Update interval in seconds
+	update_interval = 2.0,
 
-## This is the number of times Conky will update before quitting.
-## Set to zero to run forever.
-total_run_times 0
+--# This is the number of times Conky will update before quitting.
+--# Set to zero to run forever.
+	total_run_times = 0,
 
-## Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
-short_units yes
+--# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+	short_units = true,
 
-## How strict should if_up be when testing an interface for being up?
-## The value is one of up, link or address, to check for the interface
-## being solely up, being up and having link or being up, having link
-## and an assigned IP address. 
-if_up_strictness address
+--# How strict should if_up be when testing an interface for being up?
+--# The value is one of up, link or address, to check for the interface
+--# being solely up, being up and having link or being up, having link
+--# and an assigned IP address. 
+	if_up_strictness = 'address',
 
-## Add spaces to keep things from moving about?  This only affects certain objects.
-## use_spacer should have an argument of left, right, or none
-use_spacer left
+--# Add spaces to keep things from moving about?  This only affects certain objects.
+--# use_spacer should have an argument of left, right, or none
+	use_spacer = 'left',
 
-## Force UTF8? note that UTF8 support required XFT
-override_utf8_locale no
+--# Force UTF8? note that UTF8 support required XFT
+	override_utf8_locale = false,
 
-## number of cpu samples to average
-## set to 1 to disable averaging
-cpu_avg_samples 2
+--# number of cpu samples to average
+--# set to 1 to disable averaging
+	cpu_avg_samples = 2,
 
-## Sensors examples
-# Top Process: ${top name 1}
-# Root: {fs_used /}/${fs_size /} /home ${fs_free /home} /${fs_size /home}
-# Load: ${loadavg 1} ${loadavg 2} ${loadavg 3} 
-# Load: $loadavg
-# Swap: ${swap}/${swapmax} (${swapperc}%)
-# Processes: ${running_processes} / ${processes}
-# CPU: $cpu% 
-# HDD: $diskio_read :Read $diskio_write :Write
-# Temp: Core0: ${exec sensors | awk '/Core 0/ {print $3}'} Core1: ${exec sensors | awk '/Core 1/ {print $3}'}
-# Freq: ${freq cpu0}Mhz
-# Uptime: $uptime
-# Kernel:$kernel on $machine
-# Name: $nodename - $sysname
-# Battery: ${battery_percent BAT0}%
+--# Sensors examples
+-- Top Process: ${top name 1}
+-- Root: {fs_used /}/${fs_size /} /home ${fs_free /home} /${fs_size /home}
+-- Load: ${loadavg 1} ${loadavg 2} ${loadavg 3} 
+-- Load: $loadavg
+-- Swap: ${swap}/${swapmax} (${swapperc}%)
+-- Processes: ${running_processes} / ${processes}
+-- CPU: $cpu% 
+-- HDD: $diskio_read :Read $diskio_write :Write
+-- Temp: Core0: ${exec sensors | awk '/Core 0/ {print $3}'} Core1: ${exec sensors | awk '/Core 1/ {print $3}'}
+-- Freq: ${freq cpu0}Mhz
+-- Uptime: $uptime
+-- Kernel:$kernel on $machine
+-- Name: $nodename - $sysname
+-- Battery: ${battery_percent BAT0}%
 
-## Stuff after 'TEXT' will be formatted on screen
-TEXT
+--# Stuff after 'TEXT' will be formatted on screen
+};
 
-[{ "full_text" : "CPU Temp: ${exec sensors | awk '/Physical id 0/ {print $4}'}", "color" : "\#ffffff" },
+conky.text = [[
+
+[{ "full_text" : "CPU Temp: ${exec sensors | awk '/Package id 0/ {print $4}'}", "color" : "\#ffffff" },
 { "full_text" : "CPU: ${cpu cpu}%", "color" : ${if_match ${cpu}<80}"\#00ff00"${else}"\#ff0000"${endif} },
 { "full_text" : "RAM:$mem/${memmax} ($memperc%)", "color" : ${if_match ${memperc}<80}"\#00ff00"${else}"\#ff0000"${endif} },
 { "full_text" : "${execi 300 /home/zach/.i3/Scripts/Weather.sh}", "color" : "\#ffffff" },
 { "full_text" : "${time %A %B %d, %Y}", "color" : "\#ffffff" },
 { "full_text" : "${time %I:%M %p}", "color" : "\#ffffff" }],
 
+]];
