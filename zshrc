@@ -44,6 +44,4 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$HOME/bin:/opt/java6/bin:/opt/h2/bin:/usr/bin/vendor_perl:$HOME/.gem/ruby/2.2.0/bin:$PATH"
-
-# Customize to your needs...
+export PATH="$HOME/bin:/opt/java6/bin:/opt/h2/bin:/usr/bin/vendor_perl:$HOME/.gem/ruby/2.2.0/bin:$PATH:$HOME/.npm_global/bin/"
